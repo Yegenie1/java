@@ -1,0 +1,15 @@
+package 상속응용;
+
+//동시에 돌아가게 하는 부품인 Thead를 상속받아서 만들면 내 부품은 동시에 돌아가는 클래스로 만들어짐
+public class 이름스레드  extends Thread{
+	//동시에 처리하고 싶은 내용을 run()메서드 안에 써줌
+	
+	public void run() {
+		for (int i = 0; i < 50000; i++) {
+			System.out.println(i + " : 길동이");
+		}
+		
+	}
+	
+
+}
