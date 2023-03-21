@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+button {
+	background: yellow;
+}
+</style>
+<script type="text/javascript">
+	function bag() {
+		first = document.getElementById("first").value
+		
+		resultTag = document.getElementById("result")
+		
+		if (first=="휴대폰") {
+			resultTag.innerHTML = '<img src=img/phone.png width=200 height=200>'
+		} else if (first=="시계"){
+			resultTag.innerHTML = '<img src=img/watch.png width=200 height=200>'
+		}else {
+			resultTag.innerHTML = '<img src=img/no.png width=200 height=200>'
+			
+		}
+	}
+	function bag2() {
+		second = document.getElementById("second").value
+		
+		resultTag = document.getElementById("result")
+		
+		if (second=="시계") {
+			//resultTag.innerHTML = '<img src=img/phone.png width=200 height=200>'
+			location.href = "http://www.naver.com"
+		} else if (second=="가방"){
+			//resultTag.innerHTML = '<img src=img/watch.png width=200 height=200>'
+			location.href = "http://www.daum.net"
+		}
+	}
+
+</script>
+
+</head>
+<body>
+	가방안에 들어있는 물건 중 제일 중요한 것 입력  :
+	<input id="first" value="휴대폰">
+	<button onclick="bag()">제일 중요한 것 확인</button>
+	<br> 가방안에 들어있는 물건 중 두번째 중요한 것 입력 : 
+	<input id="second" value="시계">
+	<button onclick="bag2()">두번째 중요한 것 확인</button>
+	<div id="result"
+		style="color: red; background: yellow; width: 500px; height: 50px; font-size: 30px">
+		결과넣는 곳.</div>
+</body>
+</html>
