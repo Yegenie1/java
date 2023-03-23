@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.6.4.js"></script>
+<script type="text/javascript">
+	$(function() { //body태그 부분을 ram에 dom tree로 읽어와서 준비가 되면, 
+		$('#b1').click(function() {
+			con = $('#content').val() //hahaha
+			divTag = $('#result')//div태그전체를 의미
+			
+			divTag.append(con+"<br>")//밑에 그대로 붙이기
+		}) //b1
+		$('#b2').click(function() {
+			con = $('#content').val() //hahaha
+			divTag = $('#result')//div태그전체를 의미
+			
+			divTag.append("<img src=img/04.png width=100 height=100>")//밑에 그대로 붙이기
+		}) //b1
+		$('#b3').click(function() {
+			con = $('#content').val() //hahaha
+			divTag = $('#result')//div태그전체를 의미
+			
+			divTag.append("<img src=img/04.png width=100 height=100>"+con+"<br>")//밑에 그대로 붙이기
+		}) //b1
+	})//$
+</script>
+</head>
+<body>
+입력내용 <input id="content" value="hahaha" style="background: pink">
+<button id="b1">글자추가</button>
+<button id="b2">이미지추가</button>
+<button id="b3">댓글추가</button>
+<div id="result"></div>
+</body>
+</html>

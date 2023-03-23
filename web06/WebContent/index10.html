@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.6.4.js"></script>
+<script type="text/javascript">
+$(function() {//jquery기본 사용법
+	//alert("body부분을 dom tree로 ram에 읽어들였음")
+	//document.getElementById("today")==>$("#today")
+	//콜백함수
+	$('#b1').click(function() {
+		food = $('#food').val()
+		where = $('#where').val()
+		alert('당신이 먹고 싶은 음식은 ' + food+'이고, 가고싶은 곳은 '+where+'군요')
+	})
+	$('#b2').click(function() {
+		//alert('b2이 클릭되었음')//실행할 내용 정의 (함수정의)
+		s = $('#site').val()
+		if (s=='movie') {
+			location.href="http://cgv.co.kr"
+		} else {
+			location.href="http://www.naver.com"
+			
+		}
+	})
+	
+})
+
+</script>
+</head>
+<body>
+
+먹고싶은 음식<input id="food" value="커피" style="background: yellow"><br>
+가고싶은 곳<input id="where" value="제주도" style="background: yellow"><br>
+<button id="b1">push me1</button><br>
+
+내가 제일 많이가는 사이트<input id="site" style="background: pink"><br>
+<button id="b2">push me2</button>
+</body>
+</html>

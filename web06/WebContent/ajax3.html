@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.6.4.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#b1').click(function() {
+			$.ajax({
+				url:"money.jsp",
+				data:{
+					money:$('#money').val(),
+					choice:$('#choice').val()
+				},
+				success : function(x) {
+					alert(x)
+					$('#result').html("<font color= red>결제금액은 "+x.trim()+"원 입니다</font>")
+					//x2=x.trim()//공백없애기
+				
+				},
+				error : function(e) {
+					
+				}
+			})
+		})
+	})
+	
+	$(function() {
+		$('#b2').click(function() {
+			$.ajax({
+				url:"idCheck.jsp",
+				data:{
+					id:$('#id').val()
+				},
+				success : function(x) {
+					alert(x)
+					$('#result').html("<font color= red>"+x+"</font>")
+					x2=x.trim()//공백없애기
+				
+				},
+				error : function(e) {
+					
+				}
+			})
+		})
+	})
+	
+	$(function() {
+		$('#b3').click(function() {
+			$.ajax({
+				url:"tel.jsp",
+				data:{
+					tel:$('#tel').val()
+				},
+				success : function(x) {
+					alert(x)
+					$('#result').html("<font color= red>인증번호는 "+x.trim()+"입니다</font>")
+					//x2=x.trim()//공백없애기
+				
+				},
+				error : function(e) {
+					
+				}
+			})
+		})
+	})
+
+</script>
+
+</head>
+<body>
+
+	<h3>비동기통신으로 서버와 통신하기</h3>
+	결제금액 :
+	<input id="money" class="text-bg-info" value="1000">
+	<br> 1)계좌이체 2)신용카드 3)휴대폰결제
+	<br> 결제수단 :
+	<input id="choice" class="text-bg-info" value="1">
+	<button id="b1" style="background: green">결제하기</button>
+
+	<hr color="red">
+	회원가입할 id 입력 :
+	<input id="id" class="text-bg-info" value="root">
+	<button id="b2" style="background: yellow">회원가입시 id중복체크</button>
+	<hr color="red">
+	인증받을 전화번호 입력 :
+	<input id="tel" class="text-bg-info" value="01033335555">
+	<button id="b3" style="background: pink">인증번호 받기</button>
+	<hr color="green">
+	<div id="result">결과</div>
+</body>
+</html>
